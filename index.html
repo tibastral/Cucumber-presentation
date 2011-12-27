@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>My Preso</title>
+
+  <meta name="viewport" content="width=device-width"/>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+  <script type="text/javascript" src="./js/coffee-script.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+    <link rel="stylesheet" href="file/custom.css" type="text/css"/>
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+      setupPreso(false, './');
+  });
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">z, ?</td><td>toggle help (this)</td></tr>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">shift-space, &larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>toggle debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c, t</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">n</td><td>toggle notes</td></tr>
+    <tr><td class="key">p</td><td>run preshow</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content" ref="one/01_slide/1">
+<h1>utilisation de Cucumber avec Pivotal Tracker</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/01_slide/2">
+<h2>Sondage</h2>
+
+<ul>
+<li>combien de personnes ne connaissent pas cucumber ?</li>
+<li>combien de personnes &#xE9;crivent des tests ?</li>
+<li>combien de personnes &#xE9;crivent des tests avant de coder ?</li>
+<li>combien de personnes &#xE9;crivent des tests avant de coder tous les jours ?</li>
+<li>combien de personnes &#xE9;crivent des tests avant de coder &#xE0; chaque fois qu'ils ont quelque chose &#xE0; coder ?</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/3">
+<h2>Cucumber</h2>
+
+<ul>
+<li>Cr&#xE9;&#xE9; par Aslak Helles&#xF8;y en 2008</li>
+<li>But : avoir un outil permettant d'&#xE9;crire des user stories en texte pur.</li>
+<li>Aslak pensait merger son outil &#xE0; Rspec, et n'imaginait pas l'essor que celui-ci a pris</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="uncover"><div class="content" ref="one/01_slide/4">
+<h2>Installation</h2>
+
+<ol>
+<li><p>ajouter cucumber-rails et database-cleaner dans le Gemfile</p>
+
+<pre class="sh_ruby"><code> group :test do
+   gem 'turn', '0.8.2', :require =&gt; false
+   gem 'cucumber-rails'
+   gem 'database_cleaner'
+ end</code></pre></li>
+<li><p>installer cucumber dans le projet</p>
+
+<pre class="sh_sh"><code> rails g cucumber:install</code></pre></li>
+</ol>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/5">
+<h2>Premi&#xE8;re &#xE9;tape : savoir de quoi on parle</h2>
+
+<ul>
+<li>Le "In order to" est la valeur ajout&#xE9;e de ce qu'on va coder</li>
+<li>C'est l&#xE0; qu'on va savoir si ce qu'on fait a vraiment de la valeur pour nos utilisateurs</li>
+<li>C'est la partie essentielle du travail, elle nous permet de voir s'il y a bien du business derri&#xE8;re une fonctionnalit&#xE9;</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/01_slide/6">
+<h2>Loi des 5 pourquoi</h2>
+
+<ul>
+<li><p>Poser la question pourquoi r&#xE9;cursivement 5 fois (au maximum) jusqu'&#xE0; avoir une des r&#xE9;ponses suivantes :</p></li>
+<li><p>Prot&#xE9;ger les recettes</p></li>
+<li>Augmenter les recettes</li>
+<li>Diminuer les co&#xFB;ts</li>
+<li>Augmenter la valeur de la marque</li>
+<li>Faire du produit un produit remarquable</li>
+<li>Apporter plus de valeur aux clients</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/7">
+<h2>Ensuite, on commence &#xE0; r&#xE9;fl&#xE9;chir &#xE0; un sc&#xE9;nario avec les Given When Then</h2>
+
+<ul>
+<li>&#xE9;tat initial</li>
+<li>introduction d'une perturbation au syst&#xE8;me</li>
+<li>assertion : v&#xE9;rification que le syst&#xE8;me est dans un &#xE9;tat d&#xE9;finit</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/8">
+<h2>Exemple 1 : On se propose de g&#xE9;rer un chenil (des chiens, des naissances, etc.)</h2>
+
+<pre class="sh_cucumber"><code>    Feature: handle a kenel
+      In order to handle our kenel
+      As a dog trainer
+      I want to be able to relate born dogs</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/9">
+<h2>Application de gestion de chenil</h2>
+
+<ul>
+<li>&#xE9;tat initial : soit un chenil habit&#xE9; par 2 chiens 1 m&#xE2;le et 1 femelle</li>
+<li>perturbation du syst&#xE8;me : les 2 chiens copulent et ont un petit</li>
+<li>assertion : le chenil devrait avoir 3 habitants</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/10">
+<h2>En cucumber on va &#xE9;crire &#xE7;a de la fa&#xE7;on suivante :</h2>
+
+<pre class="sh_cucumber"><code>    Given 1 dog and 1 bitch in a kennel
+    When the 2 dogs have a child
+    Then the kennel should have 3 inhabitants</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/11">
+<h1>Ces sc&#xE9;narios n'ayant pas grand chose &#xE0; voir avec quelque chose de mon&#xE9;tisables, nous n'allons donc pas les coder.</h1>
+
+<p>En effet, nous ne sommes pas une communaut&#xE9; de dresseurs, et nous gagnerions plus &#xE0; travailler sur un projet qui pourrait
+nous &#xEA;tre utile...</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/12">
+<h1>Passons donc &#xE0; un VRAI probl&#xE8;me que nous avons dans cette communaut&#xE9;</h1>
+
+<p>Un espace permettant de proposer des conf&#xE9;rences pour les prochains &#xE9;v&#xE8;nements !</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/13">
+<h1>Soit 2 personnes (dont une morale)</h1>
+
+<ol>
+<li>product owner =&gt; Thibaut Assus</li>
+<li>developer =&gt; Milesrock</li>
+</ol>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/14">
+<h1>m&#xE9;thode de travail avec cucumber et pivotal (1/2)</h1>
+
+<ol>
+<li>le product owner propose une user story au d&#xE9;veloppeur</li>
+<li>le d&#xE9;veloppeur lui demande quelle est la valeur ajout&#xE9;e de cette fonctionnalit&#xE9;</li>
+<li>ils se mettent d'accord sur la valeur ajout&#xE9;e</li>
+<li>le product owner poste la user story dans pivotal tracker (ou sur un vrai tableau)</li>
+<li>le d&#xE9;veloppeur estime (0, 1, 2 ou 3 points)</li>
+<li>il d&#xE9;bute le d&#xE9;veloppement (et clique sur start)</li>
+<li>il finit le d&#xE9;veloppement (et clique sur stop)</li>
+<li>il livre la story sur internet (et clique sur deliver)</li>
+</ol>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/15">
+<h1>m&#xE9;thode de travail avec cucumber et pivotal (2/2)</h1>
+
+<ol>
+<li>le product owner refuse tant de fois qu'il veut la story (tant qu'elle ne satisfait pas ses requirements)</li>
+<li>il doit donner une raison &#xE0; chaque fois</li>
+<li>le d&#xE9;veloppeur peut alors cliquer sur restart, finish, deliver pour refaire un cycle de travail</li>
+<li>Quand tout est ok, le product owner clique sur accept</li>
+<li>La story est finie.</li>
+</ol>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/16">
+<h2>la m&#xE9;thode de travail de cucumber passe par 3 &#xE9;tapes de d&#xE9;veloppement : Red, Green et Refactor</h2>
+
+<ul>
+<li>Quand on lance notre premier test, on commence par avoir du jaune.</li>
+<li>Le jaune correspond &#xE0; des steps non d&#xE9;finis</li>
+<li>On va coder ce &#xE0; quoi correspondent ces steps</li>
+<li>On relance notre test</li>
+<li>On code juste assez pour faire passer les tests</li>
+<li>On factorise le code pour supprimer la duplication</li>
+</ul>
+
+
+<h2>On peut passer &#xE0; la feature suivante !</h2>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/17">
+<h1>Demo</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/18">
+<h1>Ressources</h1>
+
+<ul>
+<li>Rspec, cucumber book : <a href="http://pragprog.com/book/achbd/the-rspec-book">http://pragprog.com/book/achbd/the-rspec-book</a></li>
+<li>le wiki du github de cucumber</li>
+<li><a href="http://cukes.info">http://cukes.info</a></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/19">
+<h1>Merci !</h1>
+
+<p>Pour tout ce que qui n'&#xE9;tait pas clair : mailez-moi (<a href="thibaut@milesrock.com">thibaut@milesrock.com</a>)</p>
+</div>
+</div></div>
+
+</body>
+</html>
